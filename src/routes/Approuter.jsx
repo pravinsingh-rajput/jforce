@@ -5,7 +5,6 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import ViewReport from "../pages/ViewReport";
 import Admin from "../pages/Admin";
-import Temp from "../pages/Temp";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -32,10 +31,6 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />,
-      },
-      {
-        path: "/temp",
-        element: <Temp />,
       },
     ],
   },
