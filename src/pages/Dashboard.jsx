@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { empdata, activeuser } from "../utils/data";
 import Header from "../components/Header";
 import { GoClock } from "react-icons/go";
+import LiveClock from "../components/LiveClock";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -54,11 +55,10 @@ const Dashboard = () => {
       clockout: updatedUserData.currentsession.isactive ? currentTime : "",
     };
 
-    // Set the updated userData as the new state
     setUserData(updatedUserData);
     setIsSessionActive(!isSessionActive);
 
-    console.log(updatedUserData); // Log the updated user data to verify the changes
+    console.log(updatedUserData);
   };
 
   return (
@@ -82,13 +82,16 @@ const Dashboard = () => {
                   </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      <div className="text-lg">
+                      <div className="text-lg flex  gap-2">
                         <span className="font-semibold text-black">Today:</span>{" "}
-                        {new Date().toLocaleDateString()}
+                        <LiveClock />
                       </div>
                       {displayText && (
-                        <div className="text-lg mt-6">
-                          {displayText} {now.getHours > 12 ? "PM" : "AM"}
+                        <div className="text-lg">
+                          <span className="font-semibold text-black">
+                            Session:
+                          </span>{" "}
+                          {displayText} {now.getHours > 12 ? "AM" : "PM"}
                         </div>
                       )}
                     </p>

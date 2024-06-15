@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { empdata } from "../utils/data";
 import { FaRegUser } from "react-icons/fa";
 import Header from "../components/Header";
@@ -31,6 +32,10 @@ const Admin = () => {
                       </div>
                     </div>
                   </div>
+
+                  <Link to={`/view-report/${index}`} className="cursor-pointer">
+                    View History
+                  </Link>
                 </div>
               ))}
             </div>

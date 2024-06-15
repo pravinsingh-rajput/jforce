@@ -10,34 +10,55 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  //   const [empdata, setEmpdata] = useState([]);
-
   const handleSubmit = () => {
-    // e.preventDefault();
+    let isValid = true;
 
-    const existingUser = empdata.find((user) => user.email === email);
-    if (!existingUser) {
-      const newUser = {
-        username: name,
-        password: password,
-        history: [],
-        currentsession: {
-          isactive: false,
-          clockin: "",
-          clockout: "",
-        },
-      };
+    if (!name || !email || !password || !number) {
+      alert("Please fill in all fields.");
+      isValid = false;
+    }
 
-      //   setEmpdata([...empdata, newUser]);
-      empdata.push(newUser);
-      console.log(empdata);
-      alert("Registration successful!");
-      setName("");
-      setEmail("");
-      setPassword("");
-      setNumber("");
-    } else {
-      alert("User already exists.");
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!emailRegex.test(email)) {
+      alert("Invalid email address.");
+      isValid = false;
+    }
+
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$%*?&])[A-Za-z\d@$%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      alert(
+        "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character."
+      );
+      isValid = false;
+    }
+
+    if (isValid) {
+      const existingUser = empdata.find((user) => user.email === email);
+      if (!existingUser) {
+        const newUser = {
+          username: name,
+          password: password,
+          email: email,
+          number: number,
+          history: [],
+          currentsession: {
+            isactive: false,
+            clockin: "",
+            clockout: "",
+          },
+        };
+
+        empdata.push(newUser);
+        localStorage.setItem("empdata", JSON.stringify(empdata));
+        alert("Registration successful!");
+        setName("");
+        setEmail("");
+        setPassword("");
+        setNumber("");
+      } else {
+        alert("User already exists.");
+      }
     }
   };
 

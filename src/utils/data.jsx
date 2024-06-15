@@ -2,6 +2,8 @@ export const empdata = [
   {
     username: "pravin",
     password: "pravin123",
+    email: "pravin@pravin.com",
+    number: 8745345567,
     history: [
       {
         date: "24-02-2020",
@@ -15,13 +17,13 @@ export const empdata = [
       },
       {
         date: "26-02-2020",
-        clockin: "Absent",
-        clockout: "Absent",
+        clockin: "10:00:00 AM",
+        clockout: "07:00:00 PM",
       },
       {
         date: "27-02-2020",
-        clockin: "Absent",
-        clockout: "Absent",
+        clockin: "10:00:00 AM",
+        clockout: "07:00:00 PM",
       },
     ],
     currentsession: {
@@ -33,6 +35,8 @@ export const empdata = [
   {
     username: "robin",
     password: "robin123",
+    email: "robin@pravin.com",
+    number: 8745345567,
     history: [
       {
         date: "24-02-2020",
@@ -64,6 +68,8 @@ export const empdata = [
   {
     username: "shweta",
     password: "shweta123",
+    email: "shweta@pravin.com",
+    number: 8745345567,
     history: [
       {
         date: "24-02-2020",
@@ -95,6 +101,8 @@ export const empdata = [
   {
     username: "vaibhav",
     password: "vaibhav123",
+    email: "vaibhav@pravin.com",
+    number: 8745345567,
     history: [
       {
         date: "24-02-2020",

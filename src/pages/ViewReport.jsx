@@ -22,12 +22,12 @@ const ViewReport = () => {
       <Header title="Employee History" />
 
       <div className="container px-4 mx-auto mt-10">
-        <div className="mx-auto p-6 pb-1 border max-w-[600px] bg-white rounded-md shadow-dashboard">
+        <div className="mx-auto p-6 pb-1 border max-w-[] bg-white rounded-md shadow-dashboard">
           <div className="flex flex-wrap">
             <div className="w-full border-b border-coolGray-100">
               {employeeHistory.map((historyItem, index) => (
                 <div
-                  className="flex flex-wrap items-center justify-between py-4 -m-2"
+                  className="flex flex-wrap items-center justify-between py-4 -m-2 "
                   key={index}
                 >
                   <div className="w-auto p-2">
